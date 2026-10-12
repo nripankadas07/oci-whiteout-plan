@@ -1,6 +1,8 @@
 # oci-whiteout-plan
 
-Public alpha prepared on 12 October 2026. **Remote verification pending; not yet a verified launch.**
+Public alpha published on 12 October 2026. Linux CI verified contract tests, compilation, wheel building and a clean installed example on Python 3.10, 3.12 and 3.14.
+
+[Current CI](https://github.com/nripankadas07/oci-whiteout-plan/actions) · [Runnable demo](DEMO.md) · [Research and alternatives](RESEARCH.md) · [Validation receipts](INSTALL_VALIDATION.json)
 Original Python implementation, MIT, zero runtime dependencies. AI-assisted development.
 
 Container build engineer reviewing captured layer entries. Explain why a lower-layer file disappears without extracting an untrusted image.
@@ -9,10 +11,12 @@ Compose normalized path manifests with ordinary and opaque OCI whiteouts, preser
 
 ## Install and first useful result
 
-Python 3.10+ (only Linux Python 3.12.14 tested in this preparation). Build requires setuptools 61+ and wheel already available; install into a fresh venv uses only the generated wheel. Run source tests with your build interpreter:
+Python 3.10+; Linux Python 3.10, 3.12 and 3.14 are covered by CI. Other operating systems are untested. The wheel build may download setuptools and wheel from PyPI; installation of the resulting wheel has no runtime dependencies. From a clean source checkout:
 
 ```sh
-python -m pip wheel --no-index --no-deps --no-build-isolation --wheel-dir wheelhouse .
+git clone https://github.com/nripankadas07/oci-whiteout-plan.git
+cd oci-whiteout-plan
+python -m pip wheel --no-deps --wheel-dir wheelhouse .
 python -m venv .venv
 .venv/bin/python -m pip install --no-index --no-deps wheelhouse/*.whl
 .venv/bin/oci-whiteout-plan example.json
