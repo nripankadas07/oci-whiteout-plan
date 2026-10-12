@@ -1,0 +1,105 @@
+{
+  "name": "oci-whiteout-plan",
+  "state": "VALIDATED",
+  "tested": "Linux Python 3.12.14",
+  "unit_tests": 14,
+  "install_passed": true,
+  "remote_ci": "NOT_RUN",
+  "publication": "Website publication in progress; remote CI not yet verified",
+  "commands": [
+    {
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-m",
+        "compileall",
+        "-q",
+        "/workspace/scratch/5d784ffbbfd3/prepared-oct12/oci-whiteout-plan"
+      ],
+      "exit": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-m",
+        "pip",
+        "wheel",
+        "--no-index",
+        "--no-deps",
+        "--no-build-isolation",
+        "--wheel-dir",
+        "/workspace/scratch/5d784ffbbfd3/prepared-oct12/oci-whiteout-plan/wheelhouse",
+        "/workspace/scratch/5d784ffbbfd3/prepared-oct12/oci-whiteout-plan"
+      ],
+      "exit": 0,
+      "stdout": "Processing /workspace/scratch/5d784ffbbfd3/prepared-oct12/oci-whiteout-plan\n  Preparing metadata (pyproject.toml): started\n  Preparing metadata (pyproject.toml): finished with status 'done'\nBuilding wheels for collected packages: oci-whiteout-plan\n  Building wheel for oci-whiteout-plan (pyproject.toml): started\n  Building wheel for oci-whiteout-plan (pyproject.toml): finished with status 'done'\n  Created wheel for oci-whiteout-plan: filename=oci_whiteout_plan-0.1.0-py3-none-any.whl size=4347 sha256=bae005a70ee666125e3b867350d01ecbb12ac778dc95919f87cd72fcaf91840b\n  Stored in directory: /tmp/pip-ephem-wheel-cache-83e1dm34/wheels/31/73/2a/bb1d2af8b7556e6fa22e1b5b20e3f3c73ab2d3795ccee6678a\nSuccessfully built oci-whiteout-plan\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-m",
+        "venv",
+        "/tmp/candidate-install-rjtif7n0/venv"
+      ],
+      "exit": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/tmp/candidate-install-rjtif7n0/venv/bin/python",
+        "-m",
+        "pip",
+        "install",
+        "--no-index",
+        "--no-deps",
+        "/workspace/scratch/5d784ffbbfd3/prepared-oct12/oci-whiteout-plan/wheelhouse/oci_whiteout_plan-0.1.0-py3-none-any.whl"
+      ],
+      "exit": 0,
+      "stdout": "Processing /workspace/scratch/5d784ffbbfd3/prepared-oct12/oci-whiteout-plan/wheelhouse/oci_whiteout_plan-0.1.0-py3-none-any.whl\nInstalling collected packages: oci-whiteout-plan\nSuccessfully installed oci-whiteout-plan-0.1.0\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/tmp/candidate-install-rjtif7n0/venv/bin/oci-whiteout-plan",
+        "/workspace/scratch/5d784ffbbfd3/prepared-oct12/oci-whiteout-plan/example.json"
+      ],
+      "exit": 0,
+      "stdout": "{\"paths\": {\"etc\": {\"implicit\": true, \"kind\": \"dir\", \"layer\": 0}, \"etc/new\": {\"implicit\": false, \"kind\": \"file\", \"layer\": 1}}, \"whiteouts\": [{\"layer\": 1, \"marker\": \"etc/.wh..wh..opq\", \"removed\": [\"etc/keep\", \"etc/old\"]}]}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/tmp/candidate-install-rjtif7n0/venv/bin/oci-whiteout-plan",
+        "/tmp/candidate-install-rjtif7n0/bad.json"
+      ],
+      "exit": 2,
+      "stdout": "",
+      "stderr": "input error: layers must be a list of at most 64 path lists\n"
+    },
+    {
+      "command": [
+        "/tmp/candidate-install-rjtif7n0/venv/bin/oci-whiteout-plan",
+        "/tmp/candidate-install-rjtif7n0/missing.json"
+      ],
+      "exit": 2,
+      "stdout": "",
+      "stderr": "input error: [Errno 2] No such file or directory: '/tmp/candidate-install-rjtif7n0/missing.json'\n"
+    },
+    {
+      "command": [
+        "/tmp/candidate-install-rjtif7n0/venv/bin/oci-whiteout-plan",
+        "/tmp/candidate-install-rjtif7n0/large.json"
+      ],
+      "exit": 2,
+      "stdout": "",
+      "stderr": "input error: input exceeds 1 MiB\n"
+    }
+  ],
+  "wheel": {
+    "name": "oci_whiteout_plan-0.1.0-py3-none-any.whl",
+    "sha256": "bae005a70ee666125e3b867350d01ecbb12ac778dc95919f87cd72fcaf91840b"
+  }
+}

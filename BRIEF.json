@@ -1,0 +1,23 @@
+{
+  "name": "oci-whiteout-plan",
+  "state": "VALIDATED",
+  "user": "Container build engineer reviewing captured layer entries.",
+  "pain": "Explain why a lower-layer file disappears without extracting an untrusted image.",
+  "smallest_capability": "Compose normalized path manifests with ordinary and opaque OCI whiteouts, preserving same-layer additions and a deletion trace.",
+  "acceptance": [
+    "Apply whiteouts only to lower-layer entries, regardless of member order.",
+    "Reject traversal, absolute paths and unsupported entry kinds.",
+    "Deterministic final paths and source-layer provenance."
+  ],
+  "demand": "Inferred; image-spec whiteout clarification and dive archive/path-safety reports are relevant evidence, not requests for this tool.",
+  "discovery": "Container-image diagnostics and OCI whiteout examples.",
+  "distinctness": "No owned repository composes OCI whiteout manifests. portable-tree audits portability, not layer semantics.",
+  "limits": "Not an OCI runtime, tar extractor, image registry client, permission or link resolver.",
+  "local_validation": {
+    "unit_tests": 14,
+    "wheel_and_clean_install": "PASS",
+    "Python": "Linux 3.12.14",
+    "remote_ci": "NOT_RUN"
+  },
+  "publication": "Website publication in progress; remote CI not yet verified"
+}

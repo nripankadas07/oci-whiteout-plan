@@ -1,0 +1,14 @@
+[build-system]
+requires = ["setuptools>=61", "wheel"]
+build-backend = "setuptools.build_meta"
+[project]
+name = "oci-whiteout-plan"
+version = "0.1.0"
+description = "Offline normalized-input diagnostic with explicit limitations"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+dependencies = []
+[project.scripts]
+oci-whiteout-plan = "oci_whiteout_plan.cli:main"
+[tool.setuptools]
+packages = ["oci_whiteout_plan"]

@@ -1,0 +1,24 @@
+{
+  "layers": [
+    [
+      {
+        "path": "etc/old",
+        "kind": "file"
+      },
+      {
+        "path": "etc/keep",
+        "kind": "file"
+      }
+    ],
+    [
+      {
+        "path": "etc/new",
+        "kind": "file"
+      },
+      {
+        "path": "etc/.wh..wh..opq",
+        "kind": "file"
+      }
+    ]
+  ]
+}
