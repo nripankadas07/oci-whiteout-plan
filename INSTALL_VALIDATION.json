@@ -4,8 +4,54 @@
   "tested": "Linux Python 3.12.14",
   "unit_tests": 14,
   "install_passed": true,
-  "remote_ci": "NOT_RUN",
-  "publication": "Website publication in progress; remote CI not yet verified",
+  "remote_ci": {
+    "source_head": "45f425cc87931e645163c9512eb9c741ed9279bb",
+    "runtimes": [
+      "3.10",
+      "3.12",
+      "3.14"
+    ],
+    "platform": "ubuntu-latest",
+    "checks": [
+      {
+        "name": "verify (3.12)",
+        "status": "completed",
+        "conclusion": "success",
+        "url": "https://github.com/nripankadas07/oci-whiteout-plan/actions/runs/38218234366/job/114707923397"
+      },
+      {
+        "name": "verify (3.14)",
+        "status": "completed",
+        "conclusion": "success",
+        "url": "https://github.com/nripankadas07/oci-whiteout-plan/actions/runs/38218234366/job/114707923309"
+      },
+      {
+        "name": "verify (3.10)",
+        "status": "completed",
+        "conclusion": "success",
+        "url": "https://github.com/nripankadas07/oci-whiteout-plan/actions/runs/38218234366/job/114707923049"
+      },
+      {
+        "name": "verify (3.10)",
+        "status": "completed",
+        "conclusion": "success",
+        "url": "https://github.com/nripankadas07/oci-whiteout-plan/actions/runs/38218008472/job/114707201240"
+      },
+      {
+        "name": "verify (3.12)",
+        "status": "completed",
+        "conclusion": "success",
+        "url": "https://github.com/nripankadas07/oci-whiteout-plan/actions/runs/38218008472/job/114707201199"
+      },
+      {
+        "name": "verify (3.14)",
+        "status": "completed",
+        "conclusion": "success",
+        "url": "https://github.com/nripankadas07/oci-whiteout-plan/actions/runs/38218008472/job/114707201176"
+      }
+    ]
+  },
+  "publication": "Public alpha; exact reviewed source head verified by remote CI",
   "commands": [
     {
       "command": [
@@ -101,5 +147,6 @@
   "wheel": {
     "name": "oci_whiteout_plan-0.1.0-py3-none-any.whl",
     "sha256": "bae005a70ee666125e3b867350d01ecbb12ac778dc95919f87cd72fcaf91840b"
-  }
+  },
+  "canonical_live_receipts": "https://github.com/nripankadas07/nripankadas07/blob/main/docs/PROJECT_INDEX.md"
 }
